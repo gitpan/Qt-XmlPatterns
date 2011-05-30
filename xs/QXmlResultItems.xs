@@ -24,10 +24,13 @@ QXmlResultItems::new(...)
 PREINIT:
 QXmlResultItems *ret;
 PPCODE:
+    if (1) {
+      
     ret = new QXmlResultItems();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::XmlPatterns::QXmlResultItems", (void *)ret);
     XSRETURN(1);
+    }
 
 ##  ~QXmlResultItems()
 void
@@ -41,27 +44,36 @@ void
 QXmlResultItems::current(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QXmlItem ret = THIS->current();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::XmlPatterns::QXmlItem", (void *)new QXmlItem(ret));
     XSRETURN(1);
+    }
 
 ## bool hasError()
 void
 QXmlResultItems::hasError(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->hasError();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## QXmlItem next()
 void
 QXmlResultItems::next(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QXmlItem ret = THIS->next();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::XmlPatterns::QXmlItem", (void *)new QXmlItem(ret));
     XSRETURN(1);
+    }

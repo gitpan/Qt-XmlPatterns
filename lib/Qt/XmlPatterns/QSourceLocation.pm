@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,39 +23,44 @@ Qt::XmlPatterns::QSourceLocation
 
 =over
 
-=item    QSourceLocation()
+=item   QSourceLocation()
 
-=item    QSourceLocation(const QSourceLocation & other)
+=item   QSourceLocation()
 
-=item    QSourceLocation(const QUrl & uri, int line, int column = -1)
+=item   QSourceLocation(, , )
 
-=item    QSourceLocation(const QUrl & uri, int line, int column)
+=item   QSourceLocation(, ,  = -1)
 
-=item    QSourceLocation(const QUrl & uri, int line = -1, int column = -1)
+=item   QSourceLocation(,  = -1,  = -1)
 
-=item    QSourceLocation(const QUrl & uri, int line, int column = -1)
+=item   ~QSourceLocation()
 
-=item    ~QSourceLocation()
+=item  qint64 column()
 
-=item   qint64 column()
+=item  bool isNull()
 
-=item   bool isNull()
+=item  qint64 line()
 
-=item   qint64 line()
+=item  bool operator!=()
 
-=item   bool operator!=(const QSourceLocation & other)
+=item  QSourceLocation & operator=()
 
-=item   QSourceLocation & operator=(const QSourceLocation & other)
+=item  bool operator==()
 
-=item   bool operator==(const QSourceLocation & other)
+=item  void setColumn()
 
-=item   void setColumn(qint64 newColumn)
+=item  void setLine()
 
-=item   void setLine(qint64 newLine)
+=item  void setUri()
 
-=item   void setUri(const QUrl & newUri)
+=item  QUrl uri()
 
-=item   QUrl uri()
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

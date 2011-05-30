@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,39 +23,46 @@ Qt::XmlPatterns::QXmlSchemaValidator
 
 =over
 
-=item    QXmlSchemaValidator()
+=item   QXmlSchemaValidator()
 
-=item    QXmlSchemaValidator(const QXmlSchema & schema)
+=item   QXmlSchemaValidator()
 
-=item    ~QXmlSchemaValidator()
+=item   ~QXmlSchemaValidator()
 
-=item   QAbstractMessageHandler * messageHandler()
+=item  QAbstractMessageHandler * messageHandler()
 
-=item   QXmlNamePool namePool()
+=item  QXmlNamePool namePool()
 
-=item   QNetworkAccessManager * networkAccessManager()
+=item  QNetworkAccessManager * networkAccessManager()
 
-=item   QXmlSchema schema()
+=item  QXmlSchema schema()
 
-=item   void setMessageHandler(QAbstractMessageHandler * handler)
+=item  void setMessageHandler()
 
-=item   void setNetworkAccessManager(QNetworkAccessManager * networkmanager)
+=item  void setNetworkAccessManager()
 
-=item   void setSchema(const QXmlSchema & schema)
+=item  void setSchema()
 
-=item   void setUriResolver(const QAbstractUriResolver * resolver)
+=item  void setUriResolver()
 
-=item   const QAbstractUriResolver * uriResolver()
+=item  const QAbstractUriResolver * uriResolver()
 
-=item   bool validate(const QUrl & source)
+=item  bool validate()
 
-=item   bool validate(QIODevice * source, const QUrl & documentUri = QUrl())
+=item  bool validate(, )
 
-=item   bool validate(QIODevice * source, const QUrl & documentUri)
+=item  bool validate(,  = QUrl())
 
-=item   bool validate(const QByteArray & data, const QUrl & documentUri = QUrl())
+=item  bool validate(, )
 
-=item   bool validate(const QByteArray & data, const QUrl & documentUri)
+=item  bool validate(,  = QUrl())
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

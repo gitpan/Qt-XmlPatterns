@@ -7,38 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Attribute() { 0 }
-sub Comment() { 1 }
-sub Document() { 2 }
-sub Element() { 3 }
-sub Namespace() { 4 }
-sub ProcessingInstruction() { 5 }
-sub Text() { 6 }
-sub Precedes() { 0 }
-sub Is() { 1 }
-sub Follows() { 2 }
-sub AxisChild() { 0 }
-sub AxisDescendant() { 1 }
-sub AxisAttribute() { 2 }
-sub AxisSelf() { 3 }
-sub AxisDescendantOrSelf() { 4 }
-sub AxisFollowingSibling() { 5 }
-sub AxisNamespace() { 6 }
-sub AxisFollowing() { 7 }
-sub AxisParent() { 8 }
-sub AxisAncestor() { 9 }
-sub AxisPrecedingSibling() { 10 }
-sub AxisPreceding() { 11 }
-sub AxisAncestorOrSelf() { 12 }
-sub AxisChildOrTop() { 13 }
-sub AxisAttributeOrTop() { 14 }
 
 
 1;
@@ -51,23 +23,80 @@ Qt::XmlPatterns::QXmlNodeModelIndex
 
 =over
 
-=item    QXmlNodeModelIndex()
+=item   QXmlNodeModelIndex()
 
-=item    QXmlNodeModelIndex(const QXmlNodeModelIndex & other)
+=item   QXmlNodeModelIndex()
 
-=item   qint64 additionalData()
+=item  qint64 additionalData()
 
-=item   qint64 data()
+=item  qint64 data()
 
-=item   void * internalPointer()
+=item  void * internalPointer()
 
-=item   bool isNull()
+=item  bool isNull()
 
-=item   const QAbstractXmlNodeModel * model()
+=item  const QAbstractXmlNodeModel * model()
 
-=item   bool operator!=(const QXmlNodeModelIndex & other)
+=item  bool operator!=()
 
-=item   bool operator==(const QXmlNodeModelIndex & other)
+=item  bool operator==()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Attribute
+
+=item Comment
+
+=item Document
+
+=item Element
+
+=item Namespace
+
+=item ProcessingInstruction
+
+=item Text
+
+=item Precedes
+
+=item Is
+
+=item Follows
+
+=item AxisChild
+
+=item AxisDescendant
+
+=item AxisAttribute
+
+=item AxisSelf
+
+=item AxisDescendantOrSelf
+
+=item AxisFollowingSibling
+
+=item AxisNamespace
+
+=item AxisFollowing
+
+=item AxisParent
+
+=item AxisAncestor
+
+=item AxisPrecedingSibling
+
+=item AxisPreceding
+
+=item AxisAncestorOrSelf
+
+=item AxisChildOrTop
+
+=item AxisAttributeOrTop
 
 
 =back

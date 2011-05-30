@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,15 +23,22 @@ Qt::XmlPatterns::QXmlResultItems
 
 =over
 
-=item    QXmlResultItems()
+=item   QXmlResultItems()
 
-=item    ~QXmlResultItems()
+=item   ~QXmlResultItems()
 
-=item   QXmlItem current()
+=item  QXmlItem current()
 
-=item   bool hasError()
+=item  bool hasError()
 
-=item   QXmlItem next()
+=item  QXmlItem next()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

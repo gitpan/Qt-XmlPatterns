@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,21 +23,28 @@ Qt::XmlPatterns::QXmlName
 
 =over
 
-=item   static QXmlName fromClarkName(const QString & clarkName, const QXmlNamePool & namePool)
+=item  static QXmlName fromClarkName(, )
 
-=item   static bool isNCName(const QString & candidate)
+=item  static bool isNCName()
 
-=item   bool isNull()
+=item  bool isNull()
 
-=item   QString namespaceUri(const QXmlNamePool & query)
+=item  QString namespaceUri()
 
-=item   bool operator!=(const QXmlName & other)
+=item  bool operator!=()
 
-=item   QXmlName & operator=(const QXmlName & other)
+=item  QXmlName & operator=()
 
-=item   bool operator==(const QXmlName & other)
+=item  bool operator==()
 
-=item   QString toClarkName(const QXmlNamePool & query)
+=item  QString toClarkName()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

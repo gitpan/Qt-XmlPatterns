@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,37 +23,44 @@ Qt::XmlPatterns::QAbstractXmlReceiver
 
 =over
 
-=item    QAbstractXmlReceiver()
+=item   QAbstractXmlReceiver()
 
-=item    ~QAbstractXmlReceiver()
+=item   ~QAbstractXmlReceiver()
 
-=item   void atomicValue(const QVariant & value)
+=item  void atomicValue()
 
-=item   void attribute(const QXmlName & name, const QStringRef & value)
+=item  void attribute(, )
 
-=item   void characters(const QStringRef & value)
+=item  void characters()
 
-=item   void comment(const QString & value)
+=item  void comment()
 
-=item   void endDocument()
+=item  void endDocument()
 
-=item   void endElement()
+=item  void endElement()
 
-=item   void endOfSequence()
+=item  void endOfSequence()
 
-=item   void item(const QPatternist::Item & item)
+=item  void item()
 
-=item   void namespaceBinding(const QXmlName & name)
+=item  void namespaceBinding()
 
-=item   void processingInstruction(const QXmlName & target, const QString & value)
+=item  void processingInstruction(, )
 
-=item   void startDocument()
+=item  void startDocument()
 
-=item   void startElement(const QXmlName & name)
+=item  void startElement()
 
-=item   void startOfSequence()
+=item  void startOfSequence()
 
-=item   void whitespaceOnly(const QStringRef & value)
+=item  void whitespaceOnly()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

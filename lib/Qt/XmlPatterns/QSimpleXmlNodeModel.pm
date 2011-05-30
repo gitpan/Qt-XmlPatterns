@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QAbstractXmlNodeModel/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::XmlPatterns::QAbstractXmlNodeModel/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,17 +24,24 @@ Qt::XmlPatterns::QSimpleXmlNodeModel
 
 =over
 
-=item    QSimpleXmlNodeModel(const QXmlNamePool & namePool)
+=item   QSimpleXmlNodeModel()
 
-=item    ~QSimpleXmlNodeModel()
+=item   ~QSimpleXmlNodeModel()
 
-=item   QUrl baseUri(const QXmlNodeModelIndex & node)
+=item  QUrl baseUri()
 
-=item   QXmlNodeModelIndex elementById(const QXmlName & id)
+=item  QXmlNodeModelIndex elementById()
 
-=item   QXmlNamePool & namePool()
+=item  QXmlNamePool & namePool()
 
-=item   QString stringValue(const QXmlNodeModelIndex & node)
+=item  QString stringValue()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

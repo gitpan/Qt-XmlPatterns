@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QXmlNamePool()
-##  QXmlNamePool(const QXmlNamePool & other)
+##  QXmlNamePool()
   void
 QXmlNamePool::new(...)
 PREINIT:
@@ -27,32 +27,33 @@ QXmlNamePool *ret;
 QXmlNamePool * arg10;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        ret = new QXmlNamePool();
+        if (1) {
+      
+    ret = new QXmlNamePool();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::XmlPatterns::QXmlNamePool", (void *)ret);
     XSRETURN(1);
+    }
         break;
       }
-    case 2:
+      case 2:
       {
         if (sv_isa(ST(1), "Qt::XmlPatterns::QXmlNamePool")) {
-        arg10 = reinterpret_cast<QXmlNamePool *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::XmlPatterns::QXmlNamePool");
+      arg10 = reinterpret_cast<QXmlNamePool *>(SvIV((SV*)SvRV(ST(1))));
     ret = new QXmlNamePool(*arg10);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::XmlPatterns::QXmlNamePool", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ##  ~QXmlNamePool()
@@ -62,18 +63,16 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
-## QXmlNamePool & operator=(const QXmlNamePool & other)
+## QXmlNamePool & operator=()
 void
 QXmlNamePool::operator_assign(...)
 PREINIT:
 QXmlNamePool * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::XmlPatterns::QXmlNamePool")) {
-        arg00 = reinterpret_cast<QXmlNamePool *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::XmlPatterns::QXmlNamePool");
+      arg00 = reinterpret_cast<QXmlNamePool *>(SvIV((SV*)SvRV(ST(1))));
     QXmlNamePool * ret = &THIS->operator=(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::XmlPatterns::QXmlNamePool", (void *)ret);
     XSRETURN(1);
+    }

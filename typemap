@@ -11,17 +11,18 @@ QXmlName *                              		T_PTROBJ_0007
 QXmlNamePool *                          		T_PTROBJ_0008
 QFlag *                                 		T_PTROBJ_0009
 QXmlNodeModelIndex *                    		T_PTROBJ_0010
-QXmlSerializer *                        		T_PTROBJ_0011
-QXmlSchemaValidator *                   		T_PTROBJ_0012
-QSourceLocation *                       		T_PTROBJ_0013
-QAbstractXmlNodeModel *                 		T_PTROBJ_0014
-QIncompatibleFlag *                     		T_PTROBJ_0015
-QInternal *                             		T_PTROBJ_0016
-QSimpleXmlNodeModel *                   		T_PTROBJ_0017
-QXmlItem *                              		T_PTROBJ_0018
-QXmlSchema *                            		T_PTROBJ_0019
-QAbstractUriResolver *                  		T_PTROBJ_0020
-QBool *                                 		T_PTROBJ_0021
+Qt *                                    		T_PTROBJ_0011
+QXmlSerializer *                        		T_PTROBJ_0012
+QXmlSchemaValidator *                   		T_PTROBJ_0013
+QSourceLocation *                       		T_PTROBJ_0014
+QAbstractXmlNodeModel *                 		T_PTROBJ_0015
+QIncompatibleFlag *                     		T_PTROBJ_0016
+QInternal *                             		T_PTROBJ_0017
+QSimpleXmlNodeModel *                   		T_PTROBJ_0018
+QXmlItem *                              		T_PTROBJ_0019
+QXmlSchema *                            		T_PTROBJ_0020
+QAbstractUriResolver *                  		T_PTROBJ_0021
+QBool *                                 		T_PTROBJ_0022
 
 ################################################################
 INPUT
@@ -92,66 +93,72 @@ T_PTROBJ_0010
         Perl_croak(aTHX_ \"$var is not of type Qt::XmlPatterns::QXmlNodeModelIndex\");
 
 T_PTROBJ_0011
+    if (sv_derived_from($arg, \"Qt\"))
+        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
+    else
+        Perl_croak(aTHX_ \"$var is not of type Qt\");
+
+T_PTROBJ_0012
     if (sv_derived_from($arg, \"Qt::XmlPatterns::QXmlSerializer\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::XmlPatterns::QXmlSerializer\");
 
-T_PTROBJ_0012
+T_PTROBJ_0013
     if (sv_derived_from($arg, \"Qt::XmlPatterns::QXmlSchemaValidator\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::XmlPatterns::QXmlSchemaValidator\");
 
-T_PTROBJ_0013
+T_PTROBJ_0014
     if (sv_derived_from($arg, \"Qt::XmlPatterns::QSourceLocation\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::XmlPatterns::QSourceLocation\");
 
-T_PTROBJ_0014
+T_PTROBJ_0015
     if (sv_derived_from($arg, \"Qt::XmlPatterns::QAbstractXmlNodeModel\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::XmlPatterns::QAbstractXmlNodeModel\");
 
-T_PTROBJ_0015
+T_PTROBJ_0016
     if (sv_derived_from($arg, \"Qt::Core::QIncompatibleFlag\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Core::QIncompatibleFlag\");
 
-T_PTROBJ_0016
+T_PTROBJ_0017
     if (sv_derived_from($arg, \"Qt::Core::QInternal\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Core::QInternal\");
 
-T_PTROBJ_0017
+T_PTROBJ_0018
     if (sv_derived_from($arg, \"Qt::XmlPatterns::QSimpleXmlNodeModel\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::XmlPatterns::QSimpleXmlNodeModel\");
 
-T_PTROBJ_0018
+T_PTROBJ_0019
     if (sv_derived_from($arg, \"Qt::XmlPatterns::QXmlItem\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::XmlPatterns::QXmlItem\");
 
-T_PTROBJ_0019
+T_PTROBJ_0020
     if (sv_derived_from($arg, \"Qt::XmlPatterns::QXmlSchema\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::XmlPatterns::QXmlSchema\");
 
-T_PTROBJ_0020
+T_PTROBJ_0021
     if (sv_derived_from($arg, \"Qt::XmlPatterns::QAbstractUriResolver\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::XmlPatterns::QAbstractUriResolver\");
 
-T_PTROBJ_0021
+T_PTROBJ_0022
     if (sv_derived_from($arg, \"Qt::Core::QBool\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
@@ -194,35 +201,38 @@ T_PTROBJ_0010
     sv_setref_pv($arg, \"Qt::XmlPatterns::QXmlNodeModelIndex\", (void *)$var);
 
 T_PTROBJ_0011
-    sv_setref_pv($arg, \"Qt::XmlPatterns::QXmlSerializer\", (void *)$var);
+    sv_setref_pv($arg, \"Qt\", (void *)$var);
 
 T_PTROBJ_0012
-    sv_setref_pv($arg, \"Qt::XmlPatterns::QXmlSchemaValidator\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::XmlPatterns::QXmlSerializer\", (void *)$var);
 
 T_PTROBJ_0013
-    sv_setref_pv($arg, \"Qt::XmlPatterns::QSourceLocation\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::XmlPatterns::QXmlSchemaValidator\", (void *)$var);
 
 T_PTROBJ_0014
-    sv_setref_pv($arg, \"Qt::XmlPatterns::QAbstractXmlNodeModel\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::XmlPatterns::QSourceLocation\", (void *)$var);
 
 T_PTROBJ_0015
-    sv_setref_pv($arg, \"Qt::Core::QIncompatibleFlag\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::XmlPatterns::QAbstractXmlNodeModel\", (void *)$var);
 
 T_PTROBJ_0016
-    sv_setref_pv($arg, \"Qt::Core::QInternal\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Core::QIncompatibleFlag\", (void *)$var);
 
 T_PTROBJ_0017
-    sv_setref_pv($arg, \"Qt::XmlPatterns::QSimpleXmlNodeModel\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Core::QInternal\", (void *)$var);
 
 T_PTROBJ_0018
-    sv_setref_pv($arg, \"Qt::XmlPatterns::QXmlItem\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::XmlPatterns::QSimpleXmlNodeModel\", (void *)$var);
 
 T_PTROBJ_0019
-    sv_setref_pv($arg, \"Qt::XmlPatterns::QXmlSchema\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::XmlPatterns::QXmlItem\", (void *)$var);
 
 T_PTROBJ_0020
-    sv_setref_pv($arg, \"Qt::XmlPatterns::QAbstractUriResolver\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::XmlPatterns::QXmlSchema\", (void *)$var);
 
 T_PTROBJ_0021
+    sv_setref_pv($arg, \"Qt::XmlPatterns::QAbstractUriResolver\", (void *)$var);
+
+T_PTROBJ_0022
     sv_setref_pv($arg, \"Qt::Core::QBool\", (void *)$var);
 

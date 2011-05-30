@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,27 +23,34 @@ Qt::XmlPatterns::QXmlItem
 
 =over
 
-=item    QXmlItem()
+=item   QXmlItem()
 
-=item    QXmlItem(const QXmlItem & other)
+=item   QXmlItem()
 
-=item    QXmlItem(const QXmlNodeModelIndex & node)
+=item   QXmlItem()
 
-=item    QXmlItem(const QVariant & atomicValue)
+=item   QXmlItem()
 
-=item    ~QXmlItem()
+=item   ~QXmlItem()
 
-=item   bool isAtomicValue()
+=item  bool isAtomicValue()
 
-=item   bool isNode()
+=item  bool isNode()
 
-=item   bool isNull()
+=item  bool isNull()
 
-=item   QXmlItem & operator=(const QXmlItem & other)
+=item  QXmlItem & operator=()
 
-=item   QVariant toAtomicValue()
+=item  QVariant toAtomicValue()
 
-=item   QXmlNodeModelIndex toNodeModelIndex()
+=item  QXmlNodeModelIndex toNodeModelIndex()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

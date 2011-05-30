@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,39 +23,46 @@ Qt::XmlPatterns::QXmlSchema
 
 =over
 
-=item    QXmlSchema()
+=item   QXmlSchema()
 
-=item    QXmlSchema(const QXmlSchema & other)
+=item   QXmlSchema()
 
-=item    ~QXmlSchema()
+=item   ~QXmlSchema()
 
-=item   QUrl documentUri()
+=item  QUrl documentUri()
 
-=item   bool isValid()
+=item  bool isValid()
 
-=item   bool load(const QUrl & source)
+=item  bool load()
 
-=item   bool load(QIODevice * source, const QUrl & documentUri = QUrl())
+=item  bool load(, )
 
-=item   bool load(QIODevice * source, const QUrl & documentUri)
+=item  bool load(,  = QUrl())
 
-=item   bool load(const QByteArray & data, const QUrl & documentUri = QUrl())
+=item  bool load(, )
 
-=item   bool load(const QByteArray & data, const QUrl & documentUri)
+=item  bool load(,  = QUrl())
 
-=item   QAbstractMessageHandler * messageHandler()
+=item  QAbstractMessageHandler * messageHandler()
 
-=item   QXmlNamePool namePool()
+=item  QXmlNamePool namePool()
 
-=item   QNetworkAccessManager * networkAccessManager()
+=item  QNetworkAccessManager * networkAccessManager()
 
-=item   void setMessageHandler(QAbstractMessageHandler * handler)
+=item  void setMessageHandler()
 
-=item   void setNetworkAccessManager(QNetworkAccessManager * networkmanager)
+=item  void setNetworkAccessManager()
 
-=item   void setUriResolver(const QAbstractUriResolver * resolver)
+=item  void setUriResolver()
 
-=item   const QAbstractUriResolver * uriResolver()
+=item  const QAbstractUriResolver * uriResolver()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

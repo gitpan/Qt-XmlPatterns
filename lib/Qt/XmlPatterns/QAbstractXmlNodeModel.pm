@@ -7,19 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw//;
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub Parent() { 0 }
-sub FirstChild() { 1 }
-sub PreviousSibling() { 2 }
-sub NextSibling() { 3 }
-sub InheritNamespaces() { 0 }
-sub PreserveNamespaces() { 1 }
 
 
 1;
@@ -32,35 +24,56 @@ Qt::XmlPatterns::QAbstractXmlNodeModel
 
 =over
 
-=item    QAbstractXmlNodeModel()
+=item   QAbstractXmlNodeModel()
 
-=item    ~QAbstractXmlNodeModel()
+=item   ~QAbstractXmlNodeModel()
 
-=item   QUrl baseUri(const QXmlNodeModelIndex & ni)
+=item  QUrl baseUri()
 
-=item   QXmlNodeModelIndex::DocumentOrder compareOrder(const QXmlNodeModelIndex & ni1, const QXmlNodeModelIndex & ni2)
+=item  QXmlNodeModelIndex::DocumentOrder compareOrder(, )
 
-=item   QUrl documentUri(const QXmlNodeModelIndex & ni)
+=item  void copyNodeTo(, , )
 
-=item   QXmlNodeModelIndex elementById(const QXmlName & NCName)
+=item  QUrl documentUri()
 
-=item   bool isDeepEqual(const QXmlNodeModelIndex & ni1, const QXmlNodeModelIndex & ni2)
+=item  QXmlNodeModelIndex elementById()
 
-=item   QXmlNodeModelIndex::NodeKind kind(const QXmlNodeModelIndex & ni)
+=item  bool isDeepEqual(, )
 
-=item   QXmlName name(const QXmlNodeModelIndex & ni)
+=item  QXmlNodeModelIndex::NodeKind kind()
 
-=item   qint16 namespaceForPrefix(const QXmlNodeModelIndex & ni, const qint16 prefix)
+=item  QXmlName name()
 
-=item   QXmlNodeModelIndex root(const QXmlNodeModelIndex & n)
+=item  qint16 namespaceForPrefix(, )
 
-=item   void sendNamespaces(const QXmlNodeModelIndex & n, QAbstractXmlReceiver * const receiver)
+=item  QXmlNodeModelIndex root()
 
-=item   QSourceLocation sourceLocation(const QXmlNodeModelIndex & index)
+=item  void sendNamespaces(, )
 
-=item   QString stringValue(const QXmlNodeModelIndex & n)
+=item  QSourceLocation sourceLocation()
 
-=item   QVariant typedValue(const QXmlNodeModelIndex & n)
+=item  QString stringValue()
+
+=item  QVariant typedValue()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item Parent
+
+=item FirstChild
+
+=item PreviousSibling
+
+=item NextSibling
+
+=item InheritNamespaces
+
+=item PreserveNamespaces
 
 
 =back

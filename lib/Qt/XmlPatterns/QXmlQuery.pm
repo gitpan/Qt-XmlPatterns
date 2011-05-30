@@ -7,18 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub XQuery10() { 0 }
-sub XSLT20() { 1 }
-sub XmlSchema11IdentityConstraintSelector() { 2 }
-sub XmlSchema11IdentityConstraintField() { 3 }
-sub XPath20() { 4 }
 
 
 1;
@@ -31,85 +23,102 @@ Qt::XmlPatterns::QXmlQuery
 
 =over
 
-=item    QXmlQuery()
+=item   QXmlQuery()
 
-=item    QXmlQuery(const QXmlQuery & other)
+=item   QXmlQuery()
 
-=item    QXmlQuery(const QXmlNamePool & np)
+=item   QXmlQuery()
 
-=item    QXmlQuery(QXmlQuery::QueryLanguage queryLanguage, const QXmlNamePool & np = QXmlNamePool())
+=item   QXmlQuery(, )
 
-=item    QXmlQuery(QXmlQuery::QueryLanguage queryLanguage, const QXmlNamePool & np)
+=item   QXmlQuery(,  = QXmlNamePool())
 
-=item    ~QXmlQuery()
+=item   ~QXmlQuery()
 
-=item   void bindVariable(const QXmlName & name, const QXmlItem & value)
+=item  void bindVariable(, )
 
-=item   void bindVariable(const QString & localName, const QXmlItem & value)
+=item  void bindVariable(, )
 
-=item   void bindVariable(const QXmlName & name, QIODevice * arg1)
+=item  void bindVariable(, )
 
-=item   void bindVariable(const QString & localName, QIODevice * arg1)
+=item  void bindVariable(, )
 
-=item   void bindVariable(const QXmlName & name, const QXmlQuery & query)
+=item  void bindVariable(, )
 
-=item   void bindVariable(const QString & localName, const QXmlQuery & query)
+=item  void bindVariable(, )
 
-=item   void evaluateTo(QXmlResultItems * result)
+=item  void evaluateTo()
 
-=item   bool evaluateTo(QAbstractXmlReceiver * callback)
+=item  bool evaluateTo()
 
-=item   bool evaluateTo(QStringList * target)
+=item  bool evaluateTo()
 
-=item   bool evaluateTo(QIODevice * target)
+=item  bool evaluateTo()
 
-=item   bool evaluateTo(QString * output)
+=item  bool evaluateTo()
 
-=item   QXmlName initialTemplateName()
+=item  QXmlName initialTemplateName()
 
-=item   bool isValid()
+=item  bool isValid()
 
-=item   QAbstractMessageHandler * messageHandler()
+=item  QAbstractMessageHandler * messageHandler()
 
-=item   QXmlNamePool namePool()
+=item  QXmlNamePool namePool()
 
-=item   QNetworkAccessManager * networkAccessManager()
+=item  QNetworkAccessManager * networkAccessManager()
 
-=item   QXmlQuery & operator=(const QXmlQuery & other)
+=item  QXmlQuery & operator=()
 
-=item   QXmlQuery::QueryLanguage queryLanguage()
+=item  QXmlQuery::QueryLanguage queryLanguage()
 
-=item   void setFocus(const QXmlItem & item)
+=item  void setFocus()
 
-=item   bool setFocus(const QUrl & documentURI)
+=item  bool setFocus()
 
-=item   bool setFocus(QIODevice * document)
+=item  bool setFocus()
 
-=item   bool setFocus(const QString & focus)
+=item  bool setFocus()
 
-=item   void setInitialTemplateName(const QXmlName & name)
+=item  void setInitialTemplateName()
 
-=item   void setInitialTemplateName(const QString & name)
+=item  void setInitialTemplateName()
 
-=item   void setMessageHandler(QAbstractMessageHandler * messageHandler)
+=item  void setMessageHandler()
 
-=item   void setNetworkAccessManager(QNetworkAccessManager * newManager)
+=item  void setNetworkAccessManager()
 
-=item   void setQuery(const QString & sourceCode, const QUrl & documentURI = QUrl())
+=item  void setQuery(, )
 
-=item   void setQuery(const QString & sourceCode, const QUrl & documentURI)
+=item  void setQuery(,  = QUrl())
 
-=item   void setQuery(QIODevice * sourceCode, const QUrl & documentURI = QUrl())
+=item  void setQuery(, )
 
-=item   void setQuery(QIODevice * sourceCode, const QUrl & documentURI)
+=item  void setQuery(,  = QUrl())
 
-=item   void setQuery(const QUrl & queryURI, const QUrl & baseURI = QUrl())
+=item  void setQuery(, )
 
-=item   void setQuery(const QUrl & queryURI, const QUrl & baseURI)
+=item  void setQuery(,  = QUrl())
 
-=item   void setUriResolver(const QAbstractUriResolver * resolver)
+=item  void setUriResolver()
 
-=item   const QAbstractUriResolver * uriResolver()
+=item  const QAbstractUriResolver * uriResolver()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item XQuery10
+
+=item XSLT20
+
+=item XmlSchema11IdentityConstraintSelector
+
+=item XmlSchema11IdentityConstraintField
+
+=item XPath20
 
 
 =back

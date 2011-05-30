@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw//;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,13 +24,20 @@ Qt::XmlPatterns::QAbstractUriResolver
 
 =over
 
-=item    QAbstractUriResolver(QObject * parent = 0)
+=item   QAbstractUriResolver()
 
-=item    QAbstractUriResolver(QObject * parent)
+=item   QAbstractUriResolver( = 0)
 
-=item    ~QAbstractUriResolver()
+=item   ~QAbstractUriResolver()
 
-=item   QUrl resolve(const QUrl & relative, const QUrl & baseURI)
+=item  QUrl resolve(, )
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

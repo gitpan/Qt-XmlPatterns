@@ -7,11 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw//;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,19 +24,24 @@ Qt::XmlPatterns::QAbstractMessageHandler
 
 =over
 
-=item    QAbstractMessageHandler(QObject * parent = 0)
+=item   QAbstractMessageHandler()
 
-=item    QAbstractMessageHandler(QObject * parent)
+=item   QAbstractMessageHandler( = 0)
 
-=item    ~QAbstractMessageHandler()
+=item   ~QAbstractMessageHandler()
 
-=item   void message(QtMsgType type, const QString & description, const QUrl & identifier, const QSourceLocation & sourceLocation = QSourceLocation())
+=item  void message(, , , )
 
-=item   void message(QtMsgType type, const QString & description, const QUrl & identifier, const QSourceLocation & sourceLocation)
+=item  void message(, , ,  = QSourceLocation())
 
-=item   void message(QtMsgType type, const QString & description, const QUrl & identifier = QUrl(), const QSourceLocation & sourceLocation = QSourceLocation())
+=item  void message(, ,  = QUrl(),  = QSourceLocation())
 
-=item   void message(QtMsgType type, const QString & description, const QUrl & identifier, const QSourceLocation & sourceLocation = QSourceLocation())
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

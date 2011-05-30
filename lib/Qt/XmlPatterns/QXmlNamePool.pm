@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,13 +23,20 @@ Qt::XmlPatterns::QXmlNamePool
 
 =over
 
-=item    QXmlNamePool()
+=item   QXmlNamePool()
 
-=item    QXmlNamePool(const QXmlNamePool & other)
+=item   QXmlNamePool()
 
-=item    ~QXmlNamePool()
+=item   ~QXmlNamePool()
 
-=item   QXmlNamePool & operator=(const QXmlNamePool & other)
+=item  QXmlNamePool & operator=()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back
