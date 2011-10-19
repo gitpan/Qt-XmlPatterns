@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QXmlSchema()
-##  QXmlSchema()
+##  QXmlSchema(const QXmlSchema & other)
   void
 QXmlSchema::new(...)
 PREINIT:
@@ -89,11 +89,11 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool load()
-## bool load(, )
-## bool load(,  = QUrl())
-## bool load(, )
-## bool load(,  = QUrl())
+## bool load(const QUrl & source)
+## bool load(QIODevice * source, const QUrl & documentUri)
+## bool load(QIODevice * source, const QUrl & documentUri = QUrl())
+## bool load(const QByteArray & data, const QUrl & documentUri)
+## bool load(const QByteArray & data, const QUrl & documentUri = QUrl())
 void
 QXmlSchema::load(...)
 PREINIT:
@@ -217,7 +217,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void setMessageHandler()
+## void setMessageHandler(QAbstractMessageHandler * handler)
 void
 QXmlSchema::setMessageHandler(...)
 PREINIT:
@@ -236,7 +236,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setNetworkAccessManager()
+## void setNetworkAccessManager(QNetworkAccessManager * networkmanager)
 void
 QXmlSchema::setNetworkAccessManager(...)
 PREINIT:
@@ -255,7 +255,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setUriResolver()
+## void setUriResolver(const QAbstractUriResolver * resolver)
 void
 QXmlSchema::setUriResolver(...)
 PREINIT:

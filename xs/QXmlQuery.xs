@@ -19,10 +19,10 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QXmlQuery()
-##  QXmlQuery()
-##  QXmlQuery()
-##  QXmlQuery(, )
-##  QXmlQuery(,  = QXmlNamePool())
+##  QXmlQuery(const QXmlQuery & other)
+##  QXmlQuery(const QXmlNamePool & np)
+##  QXmlQuery(QXmlQuery::QueryLanguage queryLanguage, const QXmlNamePool & np)
+##  QXmlQuery(QXmlQuery::QueryLanguage queryLanguage, const QXmlNamePool & np = QXmlNamePool())
   void
 QXmlQuery::new(...)
 PREINIT:
@@ -100,12 +100,12 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
-## void bindVariable(, )
-## void bindVariable(, )
-## void bindVariable(, )
-## void bindVariable(, )
-## void bindVariable(, )
-## void bindVariable(, )
+## void bindVariable(const QXmlName & name, const QXmlItem & value)
+## void bindVariable(const QString & localName, const QXmlItem & value)
+## void bindVariable(const QXmlName & name, QIODevice * arg1)
+## void bindVariable(const QString & localName, QIODevice * arg1)
+## void bindVariable(const QXmlName & name, const QXmlQuery & query)
+## void bindVariable(const QString & localName, const QXmlQuery & query)
 void
 QXmlQuery::bindVariable(...)
 PREINIT:
@@ -184,11 +184,11 @@ PPCODE:
         break;
     }
 
-## void evaluateTo()
-## bool evaluateTo()
-## bool evaluateTo()
-## bool evaluateTo()
-## bool evaluateTo()
+## void evaluateTo(QXmlResultItems * result)
+## bool evaluateTo(QAbstractXmlReceiver * callback)
+## bool evaluateTo(QStringList * target)
+## bool evaluateTo(QIODevice * target)
+## bool evaluateTo(QString * output)
 void
 QXmlQuery::evaluateTo(...)
 PREINIT:
@@ -343,7 +343,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QXmlQuery & operator=()
+## QXmlQuery & operator=(const QXmlQuery & other)
 void
 QXmlQuery::operator_assign(...)
 PREINIT:
@@ -370,10 +370,10 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void setFocus()
-## bool setFocus()
-## bool setFocus()
-## bool setFocus()
+## void setFocus(const QXmlItem & item)
+## bool setFocus(const QUrl & documentURI)
+## bool setFocus(QIODevice * document)
+## bool setFocus(const QString & focus)
 void
 QXmlQuery::setFocus(...)
 PREINIT:
@@ -427,8 +427,8 @@ PPCODE:
         break;
     }
 
-## void setInitialTemplateName()
-## void setInitialTemplateName()
+## void setInitialTemplateName(const QXmlName & name)
+## void setInitialTemplateName(const QString & name)
 void
 QXmlQuery::setInitialTemplateName(...)
 PREINIT:
@@ -457,7 +457,7 @@ PPCODE:
         break;
     }
 
-## void setMessageHandler()
+## void setMessageHandler(QAbstractMessageHandler * messageHandler)
 void
 QXmlQuery::setMessageHandler(...)
 PREINIT:
@@ -476,7 +476,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setNetworkAccessManager()
+## void setNetworkAccessManager(QNetworkAccessManager * newManager)
 void
 QXmlQuery::setNetworkAccessManager(...)
 PREINIT:
@@ -495,12 +495,12 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setQuery(, )
-## void setQuery(,  = QUrl())
-## void setQuery(, )
-## void setQuery(,  = QUrl())
-## void setQuery(, )
-## void setQuery(,  = QUrl())
+## void setQuery(const QString & sourceCode, const QUrl & documentURI)
+## void setQuery(const QString & sourceCode, const QUrl & documentURI = QUrl())
+## void setQuery(QIODevice * sourceCode, const QUrl & documentURI)
+## void setQuery(QIODevice * sourceCode, const QUrl & documentURI = QUrl())
+## void setQuery(const QUrl & queryURI, const QUrl & baseURI)
+## void setQuery(const QUrl & queryURI, const QUrl & baseURI = QUrl())
 void
 QXmlQuery::setQuery(...)
 PREINIT:
@@ -585,7 +585,7 @@ PPCODE:
         break;
     }
 
-## void setUriResolver()
+## void setUriResolver(const QAbstractUriResolver * resolver)
 void
 QXmlQuery::setUriResolver(...)
 PREINIT:

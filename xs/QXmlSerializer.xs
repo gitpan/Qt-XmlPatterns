@@ -18,7 +18,7 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-##  QXmlSerializer(, )
+##  QXmlSerializer(const QXmlQuery & query, QIODevice * outputDevice)
   void
 QXmlSerializer::new(...)
 PREINIT:
@@ -36,12 +36,15 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg01 is not of type Qt::Core::QIODevice");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QXmlSerializer(*arg00, arg01);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::XmlPatterns::QXmlSerializer", (void *)ret);
+    XSRETURN(1);
     }
 
 
 
-## void atomicValue()
+## void atomicValue(const QVariant & value)
 void
 QXmlSerializer::atomicValue(...)
 PREINIT:
@@ -53,7 +56,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void attribute(, )
+## void attribute(const QXmlName & name, const QStringRef & value)
 void
 QXmlSerializer::attribute(...)
 PREINIT:
@@ -67,7 +70,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void characters()
+## void characters(const QStringRef & value)
 void
 QXmlSerializer::characters(...)
 PREINIT:
@@ -92,7 +95,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void comment()
+## void comment(const QString & value)
 void
 QXmlSerializer::comment(...)
 PREINIT:
@@ -137,7 +140,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void item()
+## void item(const QPatternist::Item & item)
 void
 QXmlSerializer::item(...)
 PREINIT:
@@ -149,7 +152,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void namespaceBinding()
+## void namespaceBinding(const QXmlName & nb)
 void
 QXmlSerializer::namespaceBinding(...)
 PREINIT:
@@ -174,7 +177,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void processingInstruction(, )
+## void processingInstruction(const QXmlName & name, const QString & value)
 void
 QXmlSerializer::processingInstruction(...)
 PREINIT:
@@ -188,7 +191,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setCodec()
+## void setCodec(const QTextCodec * codec)
 void
 QXmlSerializer::setCodec(...)
 PREINIT:
@@ -218,7 +221,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void startElement()
+## void startElement(const QXmlName & name)
 void
 QXmlSerializer::startElement(...)
 PREINIT:

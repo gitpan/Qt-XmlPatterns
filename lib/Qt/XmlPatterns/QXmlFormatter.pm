@@ -7,8 +7,9 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::XmlPatterns::QXmlSerializer/;
+our $VERSION = '0.01_03';
+use base qw/Qt::XmlPatterns::QXmlSerializer/;
+#our @ISA = qw/Qt::XmlPatterns::QXmlSerializer/;
 
 
 # FIXME: operator overload
@@ -24,15 +25,15 @@ Qt::XmlPatterns::QXmlFormatter
 
 =over
 
-=item   QXmlFormatter(, )
+=item   QXmlFormatter(const QXmlQuery & query, QIODevice * outputDevice)
 
-=item  void atomicValue()
+=item  void atomicValue(const QVariant & value)
 
-=item  void attribute(, )
+=item  void attribute(const QXmlName & name, const QStringRef & value)
 
-=item  void characters()
+=item  void characters(const QStringRef & value)
 
-=item  void comment()
+=item  void comment(const QString & value)
 
 =item  void endDocument()
 
@@ -42,15 +43,15 @@ Qt::XmlPatterns::QXmlFormatter
 
 =item  int indentationDepth()
 
-=item  void item()
+=item  void item(const QPatternist::Item & item)
 
-=item  void processingInstruction(, )
+=item  void processingInstruction(const QXmlName & name, const QString & value)
 
-=item  void setIndentationDepth()
+=item  void setIndentationDepth(int depth)
 
 =item  void startDocument()
 
-=item  void startElement()
+=item  void startElement(const QXmlName & name)
 
 =item  void startOfSequence()
 

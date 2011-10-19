@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QXmlSchemaValidator()
-##  QXmlSchemaValidator()
+##  QXmlSchemaValidator(const QXmlSchema & schema)
   void
 QXmlSchemaValidator::new(...)
 PREINIT:
@@ -115,7 +115,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void setMessageHandler()
+## void setMessageHandler(QAbstractMessageHandler * handler)
 void
 QXmlSchemaValidator::setMessageHandler(...)
 PREINIT:
@@ -134,7 +134,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setNetworkAccessManager()
+## void setNetworkAccessManager(QNetworkAccessManager * networkmanager)
 void
 QXmlSchemaValidator::setNetworkAccessManager(...)
 PREINIT:
@@ -153,7 +153,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setSchema()
+## void setSchema(const QXmlSchema & schema)
 void
 QXmlSchemaValidator::setSchema(...)
 PREINIT:
@@ -165,7 +165,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setUriResolver()
+## void setUriResolver(const QAbstractUriResolver * resolver)
 void
 QXmlSchemaValidator::setUriResolver(...)
 PREINIT:
@@ -197,11 +197,11 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool validate()
-## bool validate(, )
-## bool validate(,  = QUrl())
-## bool validate(, )
-## bool validate(,  = QUrl())
+## bool validate(const QUrl & source)
+## bool validate(QIODevice * source, const QUrl & documentUri)
+## bool validate(QIODevice * source, const QUrl & documentUri = QUrl())
+## bool validate(const QByteArray & data, const QUrl & documentUri)
+## bool validate(const QByteArray & data, const QUrl & documentUri = QUrl())
 void
 QXmlSchemaValidator::validate(...)
 PREINIT:

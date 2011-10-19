@@ -18,7 +18,7 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-##  QSimpleXmlNodeModel()
+##  QSimpleXmlNodeModel(const QXmlNamePool & namePool)
   void
 QSimpleXmlNodeModel::new(...)
 PREINIT:
@@ -37,7 +37,7 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
-## QUrl baseUri()
+## QUrl baseUri(const QXmlNodeModelIndex & node)
 void
 QSimpleXmlNodeModel::baseUri(...)
 PREINIT:
@@ -51,7 +51,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QXmlNodeModelIndex elementById()
+## QXmlNodeModelIndex elementById(const QXmlName & id)
 void
 QSimpleXmlNodeModel::elementById(...)
 PREINIT:
@@ -78,7 +78,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QString stringValue()
+## QString stringValue(const QXmlNodeModelIndex & node)
 void
 QSimpleXmlNodeModel::stringValue(...)
 PREINIT:

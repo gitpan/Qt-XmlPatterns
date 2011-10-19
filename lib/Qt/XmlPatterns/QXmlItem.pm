@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -25,11 +25,11 @@ Qt::XmlPatterns::QXmlItem
 
 =item   QXmlItem()
 
-=item   QXmlItem()
+=item   QXmlItem(const QXmlItem & other)
 
-=item   QXmlItem()
+=item   QXmlItem(const QXmlNodeModelIndex & node)
 
-=item   QXmlItem()
+=item   QXmlItem(const QVariant & atomicValue)
 
 =item   ~QXmlItem()
 
@@ -39,7 +39,7 @@ Qt::XmlPatterns::QXmlItem
 
 =item  bool isNull()
 
-=item  QXmlItem & operator=()
+=item  QXmlItem & operator=(const QXmlItem & other)
 
 =item  QVariant toAtomicValue()
 

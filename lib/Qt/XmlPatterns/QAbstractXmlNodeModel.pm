@@ -7,8 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw//;
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -28,33 +27,33 @@ Qt::XmlPatterns::QAbstractXmlNodeModel
 
 =item   ~QAbstractXmlNodeModel()
 
-=item  QUrl baseUri()
+=item  QUrl baseUri(const QXmlNodeModelIndex & ni)
 
-=item  QXmlNodeModelIndex::DocumentOrder compareOrder(, )
+=item  QXmlNodeModelIndex::DocumentOrder compareOrder(const QXmlNodeModelIndex & ni1, const QXmlNodeModelIndex & ni2)
 
-=item  void copyNodeTo(, , )
+=item  void copyNodeTo(const QXmlNodeModelIndex & node, QAbstractXmlReceiver * const receiver, const QFlags<QAbstractXmlNodeModel::NodeCopySetting> & arg2)
 
-=item  QUrl documentUri()
+=item  QUrl documentUri(const QXmlNodeModelIndex & ni)
 
-=item  QXmlNodeModelIndex elementById()
+=item  QXmlNodeModelIndex elementById(const QXmlName & NCName)
 
-=item  bool isDeepEqual(, )
+=item  bool isDeepEqual(const QXmlNodeModelIndex & ni1, const QXmlNodeModelIndex & ni2)
 
-=item  QXmlNodeModelIndex::NodeKind kind()
+=item  QXmlNodeModelIndex::NodeKind kind(const QXmlNodeModelIndex & ni)
 
-=item  QXmlName name()
+=item  QXmlName name(const QXmlNodeModelIndex & ni)
 
-=item  qint16 namespaceForPrefix(, )
+=item  qint16 namespaceForPrefix(const QXmlNodeModelIndex & ni, const qint16 prefix)
 
-=item  QXmlNodeModelIndex root()
+=item  QXmlNodeModelIndex root(const QXmlNodeModelIndex & n)
 
-=item  void sendNamespaces(, )
+=item  void sendNamespaces(const QXmlNodeModelIndex & n, QAbstractXmlReceiver * const receiver)
 
-=item  QSourceLocation sourceLocation()
+=item  QSourceLocation sourceLocation(const QXmlNodeModelIndex & index)
 
-=item  QString stringValue()
+=item  QString stringValue(const QXmlNodeModelIndex & n)
 
-=item  QVariant typedValue()
+=item  QVariant typedValue(const QXmlNodeModelIndex & n)
 
 
 =back

@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -27,13 +27,13 @@ Qt::XmlPatterns::QAbstractXmlReceiver
 
 =item   ~QAbstractXmlReceiver()
 
-=item  void atomicValue()
+=item  void atomicValue(const QVariant & value)
 
-=item  void attribute(, )
+=item  void attribute(const QXmlName & name, const QStringRef & value)
 
-=item  void characters()
+=item  void characters(const QStringRef & value)
 
-=item  void comment()
+=item  void comment(const QString & value)
 
 =item  void endDocument()
 
@@ -41,19 +41,19 @@ Qt::XmlPatterns::QAbstractXmlReceiver
 
 =item  void endOfSequence()
 
-=item  void item()
+=item  void item(const QPatternist::Item & item)
 
-=item  void namespaceBinding()
+=item  void namespaceBinding(const QXmlName & name)
 
-=item  void processingInstruction(, )
+=item  void processingInstruction(const QXmlName & target, const QString & value)
 
 =item  void startDocument()
 
-=item  void startElement()
+=item  void startElement(const QXmlName & name)
 
 =item  void startOfSequence()
 
-=item  void whitespaceOnly()
+=item  void whitespaceOnly(const QStringRef & value)
 
 
 =back

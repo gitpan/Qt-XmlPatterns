@@ -7,8 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw//;
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -24,17 +23,17 @@ Qt::XmlPatterns::QAbstractMessageHandler
 
 =over
 
-=item   QAbstractMessageHandler()
+=item   QAbstractMessageHandler(QObject * parent)
 
-=item   QAbstractMessageHandler( = 0)
+=item   QAbstractMessageHandler(QObject * parent = 0)
 
 =item   ~QAbstractMessageHandler()
 
-=item  void message(, , , )
+=item  void message(QtMsgType type, const QString & description, const QUrl & identifier, const QSourceLocation & sourceLocation)
 
-=item  void message(, , ,  = QSourceLocation())
+=item  void message(QtMsgType type, const QString & description, const QUrl & identifier, const QSourceLocation & sourceLocation = QSourceLocation())
 
-=item  void message(, ,  = QUrl(),  = QSourceLocation())
+=item  void message(QtMsgType type, const QString & description, const QUrl & identifier = QUrl(), const QSourceLocation & sourceLocation = QSourceLocation())
 
 
 =back

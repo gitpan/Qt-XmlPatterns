@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -25,7 +25,7 @@ Qt::XmlPatterns::QXmlSchema
 
 =item   QXmlSchema()
 
-=item   QXmlSchema()
+=item   QXmlSchema(const QXmlSchema & other)
 
 =item   ~QXmlSchema()
 
@@ -33,15 +33,15 @@ Qt::XmlPatterns::QXmlSchema
 
 =item  bool isValid()
 
-=item  bool load()
+=item  bool load(const QUrl & source)
 
-=item  bool load(, )
+=item  bool load(QIODevice * source, const QUrl & documentUri)
 
-=item  bool load(,  = QUrl())
+=item  bool load(QIODevice * source, const QUrl & documentUri = QUrl())
 
-=item  bool load(, )
+=item  bool load(const QByteArray & data, const QUrl & documentUri)
 
-=item  bool load(,  = QUrl())
+=item  bool load(const QByteArray & data, const QUrl & documentUri = QUrl())
 
 =item  QAbstractMessageHandler * messageHandler()
 
@@ -49,11 +49,11 @@ Qt::XmlPatterns::QXmlSchema
 
 =item  QNetworkAccessManager * networkAccessManager()
 
-=item  void setMessageHandler()
+=item  void setMessageHandler(QAbstractMessageHandler * handler)
 
-=item  void setNetworkAccessManager()
+=item  void setNetworkAccessManager(QNetworkAccessManager * networkmanager)
 
-=item  void setUriResolver()
+=item  void setUriResolver(const QAbstractUriResolver * resolver)
 
 =item  const QAbstractUriResolver * uriResolver()
 

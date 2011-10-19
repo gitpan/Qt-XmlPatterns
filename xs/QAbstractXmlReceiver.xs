@@ -36,7 +36,7 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
-## void atomicValue()
+## void atomicValue(const QVariant & value)
 void
 QAbstractXmlReceiver::atomicValue(...)
 PREINIT:
@@ -48,7 +48,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void attribute(, )
+## void attribute(const QXmlName & name, const QStringRef & value)
 void
 QAbstractXmlReceiver::attribute(...)
 PREINIT:
@@ -62,7 +62,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void characters()
+## void characters(const QStringRef & value)
 void
 QAbstractXmlReceiver::characters(...)
 PREINIT:
@@ -74,7 +74,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void comment()
+## void comment(const QString & value)
 void
 QAbstractXmlReceiver::comment(...)
 PREINIT:
@@ -119,7 +119,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void item()
+## void item(const QPatternist::Item & item)
 void
 QAbstractXmlReceiver::item(...)
 PREINIT:
@@ -131,7 +131,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void namespaceBinding()
+## void namespaceBinding(const QXmlName & name)
 void
 QAbstractXmlReceiver::namespaceBinding(...)
 PREINIT:
@@ -143,7 +143,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void processingInstruction(, )
+## void processingInstruction(const QXmlName & target, const QString & value)
 void
 QAbstractXmlReceiver::processingInstruction(...)
 PREINIT:
@@ -168,7 +168,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void startElement()
+## void startElement(const QXmlName & name)
 void
 QAbstractXmlReceiver::startElement(...)
 PREINIT:
@@ -191,7 +191,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void whitespaceOnly()
+## void whitespaceOnly(const QStringRef & value)
 void
 QAbstractXmlReceiver::whitespaceOnly(...)
 PREINIT:

@@ -18,7 +18,7 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-##  QXmlFormatter(, )
+##  QXmlFormatter(const QXmlQuery & query, QIODevice * outputDevice)
   void
 QXmlFormatter::new(...)
 PREINIT:
@@ -36,12 +36,15 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg01 is not of type Qt::Core::QIODevice");
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QXmlFormatter(*arg00, arg01);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::XmlPatterns::QXmlFormatter", (void *)ret);
+    XSRETURN(1);
     }
 
 
 
-## void atomicValue()
+## void atomicValue(const QVariant & value)
 void
 QXmlFormatter::atomicValue(...)
 PREINIT:
@@ -53,7 +56,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void attribute(, )
+## void attribute(const QXmlName & name, const QStringRef & value)
 void
 QXmlFormatter::attribute(...)
 PREINIT:
@@ -67,7 +70,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void characters()
+## void characters(const QStringRef & value)
 void
 QXmlFormatter::characters(...)
 PREINIT:
@@ -79,7 +82,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void comment()
+## void comment(const QString & value)
 void
 QXmlFormatter::comment(...)
 PREINIT:
@@ -137,7 +140,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void item()
+## void item(const QPatternist::Item & item)
 void
 QXmlFormatter::item(...)
 PREINIT:
@@ -149,7 +152,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void processingInstruction(, )
+## void processingInstruction(const QXmlName & name, const QString & value)
 void
 QXmlFormatter::processingInstruction(...)
 PREINIT:
@@ -163,7 +166,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setIndentationDepth()
+## void setIndentationDepth(int depth)
 void
 QXmlFormatter::setIndentationDepth(...)
 PREINIT:
@@ -186,7 +189,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void startElement()
+## void startElement(const QXmlName & name)
 void
 QXmlFormatter::startElement(...)
 PREINIT:

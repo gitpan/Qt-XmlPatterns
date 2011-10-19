@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -25,7 +25,7 @@ Qt::XmlPatterns::QXmlNodeModelIndex
 
 =item   QXmlNodeModelIndex()
 
-=item   QXmlNodeModelIndex()
+=item   QXmlNodeModelIndex(const QXmlNodeModelIndex & other)
 
 =item  qint64 additionalData()
 
@@ -37,9 +37,9 @@ Qt::XmlPatterns::QXmlNodeModelIndex
 
 =item  const QAbstractXmlNodeModel * model()
 
-=item  bool operator!=()
+=item  bool operator!=(const QXmlNodeModelIndex & other)
 
-=item  bool operator==()
+=item  bool operator==(const QXmlNodeModelIndex & other)
 
 
 =back

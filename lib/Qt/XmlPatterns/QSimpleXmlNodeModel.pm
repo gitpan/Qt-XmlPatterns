@@ -7,8 +7,9 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::XmlPatterns::QAbstractXmlNodeModel/;
+our $VERSION = '0.01_03';
+use base qw/Qt::XmlPatterns::QAbstractXmlNodeModel/;
+#our @ISA = qw/Qt::XmlPatterns::QAbstractXmlNodeModel/;
 
 
 # FIXME: operator overload
@@ -24,17 +25,17 @@ Qt::XmlPatterns::QSimpleXmlNodeModel
 
 =over
 
-=item   QSimpleXmlNodeModel()
+=item   QSimpleXmlNodeModel(const QXmlNamePool & namePool)
 
 =item   ~QSimpleXmlNodeModel()
 
-=item  QUrl baseUri()
+=item  QUrl baseUri(const QXmlNodeModelIndex & node)
 
-=item  QXmlNodeModelIndex elementById()
+=item  QXmlNodeModelIndex elementById(const QXmlName & id)
 
 =item  QXmlNamePool & namePool()
 
-=item  QString stringValue()
+=item  QString stringValue(const QXmlNodeModelIndex & node)
 
 
 =back

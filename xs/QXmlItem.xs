@@ -19,9 +19,9 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QXmlItem()
-##  QXmlItem()
-##  QXmlItem()
-##  QXmlItem()
+##  QXmlItem(const QXmlItem & other)
+##  QXmlItem(const QXmlNodeModelIndex & node)
+##  QXmlItem(const QVariant & atomicValue)
   void
 QXmlItem::new(...)
 PREINIT:
@@ -120,7 +120,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QXmlItem & operator=()
+## QXmlItem & operator=(const QXmlItem & other)
 void
 QXmlItem::operator_assign(...)
 PREINIT:

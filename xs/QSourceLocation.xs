@@ -19,10 +19,10 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QSourceLocation()
-##  QSourceLocation()
-##  QSourceLocation(, , )
-##  QSourceLocation(, ,  = -1)
-##  QSourceLocation(,  = -1,  = -1)
+##  QSourceLocation(const QSourceLocation & other)
+##  QSourceLocation(const QUrl & uri, int line, int column)
+##  QSourceLocation(const QUrl & uri, int line, int column = -1)
+##  QSourceLocation(const QUrl & uri, int line = -1, int column = -1)
   void
 QSourceLocation::new(...)
 PREINIT:
@@ -150,7 +150,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool operator!=()
+## bool operator!=(const QSourceLocation & other)
 void
 QSourceLocation::operator_not_equal(...)
 PREINIT:
@@ -164,7 +164,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QSourceLocation & operator=()
+## QSourceLocation & operator=(const QSourceLocation & other)
 void
 QSourceLocation::operator_assign(...)
 PREINIT:
@@ -178,7 +178,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool operator==()
+## bool operator==(const QSourceLocation & other)
 void
 QSourceLocation::operator_equal_to(...)
 PREINIT:
@@ -192,7 +192,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void setColumn()
+## void setColumn(qint64 newColumn)
 void
 QSourceLocation::setColumn(...)
 PREINIT:
@@ -204,7 +204,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setLine()
+## void setLine(qint64 newLine)
 void
 QSourceLocation::setLine(...)
 PREINIT:
@@ -216,7 +216,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setUri()
+## void setUri(const QUrl & newUri)
 void
 QSourceLocation::setUri(...)
 PREINIT:

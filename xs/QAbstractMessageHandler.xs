@@ -18,8 +18,8 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-##  QAbstractMessageHandler()
-##  QAbstractMessageHandler( = 0)
+##  QAbstractMessageHandler(QObject * parent)
+##  QAbstractMessageHandler(QObject * parent = 0)
   void
 QAbstractMessageHandler::new(...)
 PREINIT:
@@ -65,9 +65,9 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
-## void message(, , , )
-## void message(, , ,  = QSourceLocation())
-## void message(, ,  = QUrl(),  = QSourceLocation())
+## void message(QtMsgType type, const QString & description, const QUrl & identifier, const QSourceLocation & sourceLocation)
+## void message(QtMsgType type, const QString & description, const QUrl & identifier, const QSourceLocation & sourceLocation = QSourceLocation())
+## void message(QtMsgType type, const QString & description, const QUrl & identifier = QUrl(), const QSourceLocation & sourceLocation = QSourceLocation())
 void
 QAbstractMessageHandler::message(...)
 PREINIT:

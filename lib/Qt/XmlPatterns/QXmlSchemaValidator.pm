@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -25,7 +25,7 @@ Qt::XmlPatterns::QXmlSchemaValidator
 
 =item   QXmlSchemaValidator()
 
-=item   QXmlSchemaValidator()
+=item   QXmlSchemaValidator(const QXmlSchema & schema)
 
 =item   ~QXmlSchemaValidator()
 
@@ -37,25 +37,25 @@ Qt::XmlPatterns::QXmlSchemaValidator
 
 =item  QXmlSchema schema()
 
-=item  void setMessageHandler()
+=item  void setMessageHandler(QAbstractMessageHandler * handler)
 
-=item  void setNetworkAccessManager()
+=item  void setNetworkAccessManager(QNetworkAccessManager * networkmanager)
 
-=item  void setSchema()
+=item  void setSchema(const QXmlSchema & schema)
 
-=item  void setUriResolver()
+=item  void setUriResolver(const QAbstractUriResolver * resolver)
 
 =item  const QAbstractUriResolver * uriResolver()
 
-=item  bool validate()
+=item  bool validate(const QUrl & source)
 
-=item  bool validate(, )
+=item  bool validate(QIODevice * source, const QUrl & documentUri)
 
-=item  bool validate(,  = QUrl())
+=item  bool validate(QIODevice * source, const QUrl & documentUri = QUrl())
 
-=item  bool validate(, )
+=item  bool validate(const QByteArray & data, const QUrl & documentUri)
 
-=item  bool validate(,  = QUrl())
+=item  bool validate(const QByteArray & data, const QUrl & documentUri = QUrl())
 
 
 =back

@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QXmlNodeModelIndex()
-##  QXmlNodeModelIndex()
+##  QXmlNodeModelIndex(const QXmlNodeModelIndex & other)
   void
 QXmlNodeModelIndex::new(...)
 PREINIT:
@@ -123,7 +123,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool operator!=()
+## bool operator!=(const QXmlNodeModelIndex & other)
 void
 QXmlNodeModelIndex::operator_not_equal(...)
 PREINIT:
@@ -137,7 +137,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool operator==()
+## bool operator==(const QXmlNodeModelIndex & other)
 void
 QXmlNodeModelIndex::operator_equal_to(...)
 PREINIT:

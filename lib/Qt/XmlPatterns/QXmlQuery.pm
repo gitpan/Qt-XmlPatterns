@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -25,37 +25,37 @@ Qt::XmlPatterns::QXmlQuery
 
 =item   QXmlQuery()
 
-=item   QXmlQuery()
+=item   QXmlQuery(const QXmlQuery & other)
 
-=item   QXmlQuery()
+=item   QXmlQuery(const QXmlNamePool & np)
 
-=item   QXmlQuery(, )
+=item   QXmlQuery(QXmlQuery::QueryLanguage queryLanguage, const QXmlNamePool & np)
 
-=item   QXmlQuery(,  = QXmlNamePool())
+=item   QXmlQuery(QXmlQuery::QueryLanguage queryLanguage, const QXmlNamePool & np = QXmlNamePool())
 
 =item   ~QXmlQuery()
 
-=item  void bindVariable(, )
+=item  void bindVariable(const QXmlName & name, const QXmlItem & value)
 
-=item  void bindVariable(, )
+=item  void bindVariable(const QString & localName, const QXmlItem & value)
 
-=item  void bindVariable(, )
+=item  void bindVariable(const QXmlName & name, QIODevice * arg1)
 
-=item  void bindVariable(, )
+=item  void bindVariable(const QString & localName, QIODevice * arg1)
 
-=item  void bindVariable(, )
+=item  void bindVariable(const QXmlName & name, const QXmlQuery & query)
 
-=item  void bindVariable(, )
+=item  void bindVariable(const QString & localName, const QXmlQuery & query)
 
-=item  void evaluateTo()
+=item  void evaluateTo(QXmlResultItems * result)
 
-=item  bool evaluateTo()
+=item  bool evaluateTo(QAbstractXmlReceiver * callback)
 
-=item  bool evaluateTo()
+=item  bool evaluateTo(QStringList * target)
 
-=item  bool evaluateTo()
+=item  bool evaluateTo(QIODevice * target)
 
-=item  bool evaluateTo()
+=item  bool evaluateTo(QString * output)
 
 =item  QXmlName initialTemplateName()
 
@@ -67,39 +67,39 @@ Qt::XmlPatterns::QXmlQuery
 
 =item  QNetworkAccessManager * networkAccessManager()
 
-=item  QXmlQuery & operator=()
+=item  QXmlQuery & operator=(const QXmlQuery & other)
 
 =item  QXmlQuery::QueryLanguage queryLanguage()
 
-=item  void setFocus()
+=item  void setFocus(const QXmlItem & item)
 
-=item  bool setFocus()
+=item  bool setFocus(const QUrl & documentURI)
 
-=item  bool setFocus()
+=item  bool setFocus(QIODevice * document)
 
-=item  bool setFocus()
+=item  bool setFocus(const QString & focus)
 
-=item  void setInitialTemplateName()
+=item  void setInitialTemplateName(const QXmlName & name)
 
-=item  void setInitialTemplateName()
+=item  void setInitialTemplateName(const QString & name)
 
-=item  void setMessageHandler()
+=item  void setMessageHandler(QAbstractMessageHandler * messageHandler)
 
-=item  void setNetworkAccessManager()
+=item  void setNetworkAccessManager(QNetworkAccessManager * newManager)
 
-=item  void setQuery(, )
+=item  void setQuery(const QString & sourceCode, const QUrl & documentURI)
 
-=item  void setQuery(,  = QUrl())
+=item  void setQuery(const QString & sourceCode, const QUrl & documentURI = QUrl())
 
-=item  void setQuery(, )
+=item  void setQuery(QIODevice * sourceCode, const QUrl & documentURI)
 
-=item  void setQuery(,  = QUrl())
+=item  void setQuery(QIODevice * sourceCode, const QUrl & documentURI = QUrl())
 
-=item  void setQuery(, )
+=item  void setQuery(const QUrl & queryURI, const QUrl & baseURI)
 
-=item  void setQuery(,  = QUrl())
+=item  void setQuery(const QUrl & queryURI, const QUrl & baseURI = QUrl())
 
-=item  void setUriResolver()
+=item  void setUriResolver(const QAbstractUriResolver * resolver)
 
 =item  const QAbstractUriResolver * uriResolver()
 

@@ -7,8 +7,9 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::XmlPatterns::QAbstractXmlReceiver/;
+our $VERSION = '0.01_03';
+use base qw/Qt::XmlPatterns::QAbstractXmlReceiver/;
+#our @ISA = qw/Qt::XmlPatterns::QAbstractXmlReceiver/;
 
 
 # FIXME: operator overload
@@ -24,17 +25,17 @@ Qt::XmlPatterns::QXmlSerializer
 
 =over
 
-=item   QXmlSerializer(, )
+=item   QXmlSerializer(const QXmlQuery & query, QIODevice * outputDevice)
 
-=item  void atomicValue()
+=item  void atomicValue(const QVariant & value)
 
-=item  void attribute(, )
+=item  void attribute(const QXmlName & name, const QStringRef & value)
 
-=item  void characters()
+=item  void characters(const QStringRef & value)
 
 =item  const QTextCodec * codec()
 
-=item  void comment()
+=item  void comment(const QString & value)
 
 =item  void endDocument()
 
@@ -42,19 +43,19 @@ Qt::XmlPatterns::QXmlSerializer
 
 =item  void endOfSequence()
 
-=item  void item()
+=item  void item(const QPatternist::Item & item)
 
-=item  void namespaceBinding()
+=item  void namespaceBinding(const QXmlName & nb)
 
 =item  QIODevice * outputDevice()
 
-=item  void processingInstruction(, )
+=item  void processingInstruction(const QXmlName & name, const QString & value)
 
-=item  void setCodec()
+=item  void setCodec(const QTextCodec * codec)
 
 =item  void startDocument()
 
-=item  void startElement()
+=item  void startElement(const QXmlName & name)
 
 =item  void startOfSequence()
 

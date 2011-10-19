@@ -36,7 +36,7 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
-## QUrl baseUri()
+## QUrl baseUri(const QXmlNodeModelIndex & ni)
 void
 QAbstractXmlNodeModel::baseUri(...)
 PREINIT:
@@ -50,7 +50,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QXmlNodeModelIndex::DocumentOrder compareOrder(, )
+## QXmlNodeModelIndex::DocumentOrder compareOrder(const QXmlNodeModelIndex & ni1, const QXmlNodeModelIndex & ni2)
 void
 QAbstractXmlNodeModel::compareOrder(...)
 PREINIT:
@@ -66,7 +66,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void copyNodeTo(, , )
+## void copyNodeTo(const QXmlNodeModelIndex & node, QAbstractXmlReceiver * const receiver, const QFlags<QAbstractXmlNodeModel::NodeCopySetting> & arg2)
 void
 QAbstractXmlNodeModel::copyNodeTo(...)
 PREINIT:
@@ -89,7 +89,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## QUrl documentUri()
+## QUrl documentUri(const QXmlNodeModelIndex & ni)
 void
 QAbstractXmlNodeModel::documentUri(...)
 PREINIT:
@@ -103,7 +103,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QXmlNodeModelIndex elementById()
+## QXmlNodeModelIndex elementById(const QXmlName & NCName)
 void
 QAbstractXmlNodeModel::elementById(...)
 PREINIT:
@@ -117,7 +117,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool isDeepEqual(, )
+## bool isDeepEqual(const QXmlNodeModelIndex & ni1, const QXmlNodeModelIndex & ni2)
 void
 QAbstractXmlNodeModel::isDeepEqual(...)
 PREINIT:
@@ -133,7 +133,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QXmlNodeModelIndex::NodeKind kind()
+## QXmlNodeModelIndex::NodeKind kind(const QXmlNodeModelIndex & ni)
 void
 QAbstractXmlNodeModel::kind(...)
 PREINIT:
@@ -147,7 +147,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QXmlName name()
+## QXmlName name(const QXmlNodeModelIndex & ni)
 void
 QAbstractXmlNodeModel::name(...)
 PREINIT:
@@ -161,7 +161,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## qint16 namespaceForPrefix(, )
+## qint16 namespaceForPrefix(const QXmlNodeModelIndex & ni, const qint16 prefix)
 void
 QAbstractXmlNodeModel::namespaceForPrefix(...)
 PREINIT:
@@ -177,7 +177,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QXmlNodeModelIndex root()
+## QXmlNodeModelIndex root(const QXmlNodeModelIndex & n)
 void
 QAbstractXmlNodeModel::root(...)
 PREINIT:
@@ -191,7 +191,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void sendNamespaces(, )
+## void sendNamespaces(const QXmlNodeModelIndex & n, QAbstractXmlReceiver * const receiver)
 void
 QAbstractXmlNodeModel::sendNamespaces(...)
 PREINIT:
@@ -212,7 +212,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## QSourceLocation sourceLocation()
+## QSourceLocation sourceLocation(const QXmlNodeModelIndex & index)
 void
 QAbstractXmlNodeModel::sourceLocation(...)
 PREINIT:
@@ -226,7 +226,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QString stringValue()
+## QString stringValue(const QXmlNodeModelIndex & n)
 void
 QAbstractXmlNodeModel::stringValue(...)
 PREINIT:
@@ -240,7 +240,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QVariant typedValue()
+## QVariant typedValue(const QXmlNodeModelIndex & n)
 void
 QAbstractXmlNodeModel::typedValue(...)
 PREINIT:

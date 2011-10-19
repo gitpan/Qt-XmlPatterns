@@ -18,8 +18,8 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-##  QAbstractUriResolver()
-##  QAbstractUriResolver( = 0)
+##  QAbstractUriResolver(QObject * parent)
+##  QAbstractUriResolver(QObject * parent = 0)
   void
 QAbstractUriResolver::new(...)
 PREINIT:
@@ -65,7 +65,7 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
-## QUrl resolve(, )
+## QUrl resolve(const QUrl & relative, const QUrl & baseURI)
 void
 QAbstractUriResolver::resolve(...)
 PREINIT:

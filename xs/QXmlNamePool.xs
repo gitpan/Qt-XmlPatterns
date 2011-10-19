@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QXmlNamePool()
-##  QXmlNamePool()
+##  QXmlNamePool(const QXmlNamePool & other)
   void
 QXmlNamePool::new(...)
 PREINIT:
@@ -63,7 +63,7 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
-## QXmlNamePool & operator=()
+## QXmlNamePool & operator=(const QXmlNamePool & other)
 void
 QXmlNamePool::operator_assign(...)
 PREINIT:

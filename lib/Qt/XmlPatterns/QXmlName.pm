@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -23,21 +23,21 @@ Qt::XmlPatterns::QXmlName
 
 =over
 
-=item  static QXmlName fromClarkName(, )
+=item  static QXmlName fromClarkName(const QString & clarkName, const QXmlNamePool & namePool)
 
-=item  static bool isNCName()
+=item  static bool isNCName(const QString & candidate)
 
 =item  bool isNull()
 
-=item  QString namespaceUri()
+=item  QString namespaceUri(const QXmlNamePool & query)
 
-=item  bool operator!=()
+=item  bool operator!=(const QXmlName & other)
 
-=item  QXmlName & operator=()
+=item  QXmlName & operator=(const QXmlName & other)
 
-=item  bool operator==()
+=item  bool operator==(const QXmlName & other)
 
-=item  QString toClarkName()
+=item  QString toClarkName(const QXmlNamePool & query)
 
 
 =back

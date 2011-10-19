@@ -7,8 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw//;
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -24,13 +23,13 @@ Qt::XmlPatterns::QAbstractUriResolver
 
 =over
 
-=item   QAbstractUriResolver()
+=item   QAbstractUriResolver(QObject * parent)
 
-=item   QAbstractUriResolver( = 0)
+=item   QAbstractUriResolver(QObject * parent = 0)
 
 =item   ~QAbstractUriResolver()
 
-=item  QUrl resolve(, )
+=item  QUrl resolve(const QUrl & relative, const QUrl & baseURI)
 
 
 =back

@@ -22,7 +22,7 @@ PROTOTYPES: DISABLE
 
 
 
-## static QXmlName fromClarkName(, )
+## static QXmlName fromClarkName(const QString & clarkName, const QXmlNamePool & namePool)
 void
 QXmlName::fromClarkName(...)
 PREINIT:
@@ -38,7 +38,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## static bool isNCName()
+## static bool isNCName(const QString & candidate)
 void
 QXmlName::isNCName(...)
 PREINIT:
@@ -65,7 +65,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QString namespaceUri()
+## QString namespaceUri(const QXmlNamePool & query)
 void
 QXmlName::namespaceUri(...)
 PREINIT:
@@ -79,7 +79,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool operator!=()
+## bool operator!=(const QXmlName & other)
 void
 QXmlName::operator_not_equal(...)
 PREINIT:
@@ -93,7 +93,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QXmlName & operator=()
+## QXmlName & operator=(const QXmlName & other)
 void
 QXmlName::operator_assign(...)
 PREINIT:
@@ -107,7 +107,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool operator==()
+## bool operator==(const QXmlName & other)
 void
 QXmlName::operator_equal_to(...)
 PREINIT:
@@ -121,7 +121,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QString toClarkName()
+## QString toClarkName(const QXmlNamePool & query)
 void
 QXmlName::toClarkName(...)
 PREINIT:

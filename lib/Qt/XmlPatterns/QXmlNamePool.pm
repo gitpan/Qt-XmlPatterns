@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -25,11 +25,11 @@ Qt::XmlPatterns::QXmlNamePool
 
 =item   QXmlNamePool()
 
-=item   QXmlNamePool()
+=item   QXmlNamePool(const QXmlNamePool & other)
 
 =item   ~QXmlNamePool()
 
-=item  QXmlNamePool & operator=()
+=item  QXmlNamePool & operator=(const QXmlNamePool & other)
 
 
 =back
