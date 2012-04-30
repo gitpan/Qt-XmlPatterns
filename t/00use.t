@@ -5,12 +5,13 @@
 
 # change 'tests => 1' to 'tests => last_test_to_print';
 
-use Test::More tests => 18;
+use Test::More tests => 19;
 BEGIN {
 use_ok('Qt::XmlPatterns');
 use_ok('Qt::XmlPatterns');
 use_ok('Qt::XmlPatterns::QXmlFormatter');
 use_ok('Qt::XmlPatterns::QAbstractXmlReceiver');
+use_ok('Qt::XmlPatterns::Template');
 use_ok('Qt::XmlPatterns::QSimpleXmlNodeModel');
 use_ok('Qt::XmlPatterns::QAbstractUriResolver');
 use_ok('Qt::XmlPatterns::QXmlItem');

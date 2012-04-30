@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -64,29 +64,6 @@ PPCODE:
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
-    }
-
-## void copyNodeTo(const QXmlNodeModelIndex & node, QAbstractXmlReceiver * const receiver, const QFlags<QAbstractXmlNodeModel::NodeCopySetting> & arg2)
-void
-QAbstractXmlNodeModel::copyNodeTo(...)
-PREINIT:
-QXmlNodeModelIndex * arg00;
-QAbstractXmlReceiver * arg01;
-QFlags<QAbstractXmlNodeModel::NodeCopySetting> * arg02;
-PPCODE:
-    if (sv_isa(ST(1), "Qt::XmlPatterns::QXmlNodeModelIndex") && (sv_derived_from(ST(2), "") || ST(2) == &PL_sv_undef) && sv_isa(ST(3), "")) {
-      arg00 = reinterpret_cast<QXmlNodeModelIndex *>(SvIV((SV*)SvRV(ST(1))));
-      if (sv_derived_from(ST(2), "")) {
-        arg01 = reinterpret_cast<QAbstractXmlReceiver *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else if (ST(2) == &PL_sv_undef) {
-        arg01 = 0;
-    }
-    else
-        Perl_croak(aTHX_ "arg01 is not of type ");
-      arg02 = reinterpret_cast<QFlags<QAbstractXmlNodeModel::NodeCopySetting> *>(SvIV((SV*)SvRV(ST(3))));
-    (void)THIS->copyNodeTo(*arg00, arg01, *arg02);
-    XSRETURN(0);
     }
 
 ## QUrl documentUri(const QXmlNodeModelIndex & ni)
@@ -161,6 +138,20 @@ PPCODE:
     XSRETURN(1);
     }
 
+## QVector<QXmlName> namespaceBindings(const QXmlNodeModelIndex & n)
+void
+QAbstractXmlNodeModel::namespaceBindings(...)
+PREINIT:
+QXmlNodeModelIndex * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::XmlPatterns::QXmlNodeModelIndex")) {
+      arg00 = reinterpret_cast<QXmlNodeModelIndex *>(SvIV((SV*)SvRV(ST(1))));
+    QVector<QXmlName> ret = THIS->namespaceBindings(*arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::XmlPatterns::Template::T000", (void *)new QVector<QXmlName>(ret));
+    XSRETURN(1);
+    }
+
 ## qint16 namespaceForPrefix(const QXmlNodeModelIndex & ni, const qint16 prefix)
 void
 QAbstractXmlNodeModel::namespaceForPrefix(...)
@@ -174,6 +165,20 @@ PPCODE:
     qint16 ret = THIS->namespaceForPrefix(*arg00, arg01);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
+    XSRETURN(1);
+    }
+
+## QVector<QXmlNodeModelIndex> nodesByIdref(const QXmlName & NCName)
+void
+QAbstractXmlNodeModel::nodesByIdref(...)
+PREINIT:
+QXmlName * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::XmlPatterns::QXmlName")) {
+      arg00 = reinterpret_cast<QXmlName *>(SvIV((SV*)SvRV(ST(1))));
+    QVector<QXmlNodeModelIndex> ret = THIS->nodesByIdref(*arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::XmlPatterns::Template::T001", (void *)new QVector<QXmlNodeModelIndex>(ret));
     XSRETURN(1);
     }
 

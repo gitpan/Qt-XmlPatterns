@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_03';
+our $VERSION = '0.01_04';
 
 
 # FIXME: operator overload
@@ -31,8 +31,6 @@ Qt::XmlPatterns::QAbstractXmlNodeModel
 
 =item  QXmlNodeModelIndex::DocumentOrder compareOrder(const QXmlNodeModelIndex & ni1, const QXmlNodeModelIndex & ni2)
 
-=item  void copyNodeTo(const QXmlNodeModelIndex & node, QAbstractXmlReceiver * const receiver, const QFlags<QAbstractXmlNodeModel::NodeCopySetting> & arg2)
-
 =item  QUrl documentUri(const QXmlNodeModelIndex & ni)
 
 =item  QXmlNodeModelIndex elementById(const QXmlName & NCName)
@@ -43,7 +41,11 @@ Qt::XmlPatterns::QAbstractXmlNodeModel
 
 =item  QXmlName name(const QXmlNodeModelIndex & ni)
 
+=item  QVector<QXmlName> namespaceBindings(const QXmlNodeModelIndex & n)
+
 =item  qint16 namespaceForPrefix(const QXmlNodeModelIndex & ni, const qint16 prefix)
+
+=item  QVector<QXmlNodeModelIndex> nodesByIdref(const QXmlName & NCName)
 
 =item  QXmlNodeModelIndex root(const QXmlNodeModelIndex & n)
 
@@ -87,7 +89,7 @@ Dongxu Ma E<lt>dongxu@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2011 - 2011 by Dongxu Ma
+Copyright (C) 2011 - 2012 by Dongxu Ma
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

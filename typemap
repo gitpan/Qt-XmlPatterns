@@ -23,6 +23,8 @@ QXmlItem *                              		T_PTROBJ_0019
 QXmlSchema *                            		T_PTROBJ_0020
 QAbstractUriResolver *                  		T_PTROBJ_0021
 QBool *                                 		T_PTROBJ_0022
+T000 *                                  		T_PTROBJ_0023
+T001 *                                  		T_PTROBJ_0024
 
 ################################################################
 INPUT
@@ -164,6 +166,18 @@ T_PTROBJ_0022
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Core::QBool\");
 
+T_PTROBJ_0023
+    if (sv_derived_from($arg, \"Qt::XmlPatterns::Template::T000\"))
+        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
+    else
+        Perl_croak(aTHX_ \"$var is not of type Qt::XmlPatterns::Template::T000\");
+
+T_PTROBJ_0024
+    if (sv_derived_from($arg, \"Qt::XmlPatterns::Template::T001\"))
+        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
+    else
+        Perl_croak(aTHX_ \"$var is not of type Qt::XmlPatterns::Template::T001\");
+
 
 ################################################################
 OUTPUT
@@ -235,4 +249,10 @@ T_PTROBJ_0021
 
 T_PTROBJ_0022
     sv_setref_pv($arg, \"Qt::Core::QBool\", (void *)$var);
+
+T_PTROBJ_0023
+    sv_setref_pv($arg, \"Qt::XmlPatterns::Template::T000\", (void *)$var);
+
+T_PTROBJ_0024
+    sv_setref_pv($arg, \"Qt::XmlPatterns::Template::T001\", (void *)$var);
 

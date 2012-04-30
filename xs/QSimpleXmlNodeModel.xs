@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -75,6 +75,34 @@ PPCODE:
     QXmlNamePool * ret = &THIS->namePool();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::XmlPatterns::QXmlNamePool", (void *)ret);
+    XSRETURN(1);
+    }
+
+## QVector<QXmlName> namespaceBindings(const QXmlNodeModelIndex & arg0)
+void
+QSimpleXmlNodeModel::namespaceBindings(...)
+PREINIT:
+QXmlNodeModelIndex * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::XmlPatterns::QXmlNodeModelIndex")) {
+      arg00 = reinterpret_cast<QXmlNodeModelIndex *>(SvIV((SV*)SvRV(ST(1))));
+    QVector<QXmlName> ret = THIS->namespaceBindings(*arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::XmlPatterns::Template::T000", (void *)new QVector<QXmlName>(ret));
+    XSRETURN(1);
+    }
+
+## QVector<QXmlNodeModelIndex> nodesByIdref(const QXmlName & idref)
+void
+QSimpleXmlNodeModel::nodesByIdref(...)
+PREINIT:
+QXmlName * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::XmlPatterns::QXmlName")) {
+      arg00 = reinterpret_cast<QXmlName *>(SvIV((SV*)SvRV(ST(1))));
+    QVector<QXmlNodeModelIndex> ret = THIS->nodesByIdref(*arg00);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::XmlPatterns::Template::T001", (void *)new QVector<QXmlNodeModelIndex>(ret));
     XSRETURN(1);
     }
 

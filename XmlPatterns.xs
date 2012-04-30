@@ -1,6 +1,7 @@
 // WARNING: ANY CHANGE TO THIS FILE WILL BE LOST!
 // MADE BY: ./script/create_top_dot_xs.pl
 
+#include "QtCore/qvector.h"
 #include "QtCore/qglobal.h"
 #include "QtXmlPatterns/qabstractmessagehandler.h"
 #include "QtXmlPatterns/qabstracturiresolver.h"
@@ -28,6 +29,8 @@
 
 typedef bool (*T_FPOINTER_QINTERNALCALLBACK_QNAMESPACE)(void **);
 typedef void (*T_FPOINTER_QTMSGHANDLER_QGLOBAL)(QtMsgType,const char *);
+typedef QVector<QXmlName> T000;
+typedef QVector<QXmlNodeModelIndex> T001;
 
 MODULE = Qt		PACKAGE = Qt
 PROTOTYPES: DISABLE
@@ -48,3 +51,5 @@ INCLUDE:		xs/QXmlResultItems.xs
 INCLUDE:		xs/QXmlSchema.xs
 INCLUDE:		xs/QXmlSchemaValidator.xs
 INCLUDE:		xs/QXmlSerializer.xs
+INCLUDE:		xs/T000.xs
+INCLUDE:		xs/T001.xs
